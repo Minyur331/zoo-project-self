@@ -1,4 +1,5 @@
 const path = require('path');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: "./src/global/index.jsx",
@@ -7,6 +8,7 @@ module.exports = {
     output: {
         filename: "bundle.js",
         path: path.join(__dirname, "dist", "js"),
+        publicPath: '/js/'
     },
     resolve: {
         extensions: ['.js', '.jsx', '.json']
@@ -14,8 +16,22 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.module\.css$/,
+                use: [
+                    "style-loader",
+                    {
+                        loader: "css-loader",
+                        options: {
+                            importLoaders: 1,
+                            modules: true,
+                        },
+                    }
+                ],
+            },
+            {
                 test: /\.css$/,
                 use: ["style-loader", "css-loader"],
+                exclude: /\.module\.css$/,
             },
             {
                 test: /\.(gif|jpg|jpeg)$/,
@@ -46,20 +62,34 @@ module.exports = {
                     },
                 },
             },
+            
         ],
     },
+    plugins: [
+        // new CopyPlugin({
+        //     patterns: [
+        //         {
+        //             from: "./src/features/blog/orePamphlet/assets",
+        //             to: "../assets/orePamphlet"
+        //         },
+        //     ],
+        //     options: {
+        //         concurrency: 100
+        //     }
+        // }),
+    ],
     devServer: {
         static: {
-            directory: path.join(__dirname, 'dist'),
+            directory: path.join(__dirname, 'dist')
         },
         port: 9000,
         historyApiFallback: {
             rewrites: [
-                { from: /.*/, to: "/index.html" }
-
-            ],
+                { from: /.*/, to: '/index.html' }
+            ]
+        },
+        devMiddleware: {
+            writeToDisk: (filePath) => /\\dist\\assets\\/.test(filePath)
         }
-
-    },
-
+    }
 };

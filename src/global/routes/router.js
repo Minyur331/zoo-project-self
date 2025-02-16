@@ -1,4 +1,4 @@
-import { createBrowserRouter, Outlet } from "react-router-dom";
+/*import { createBrowserRouter, Outlet } from "react-router-dom";
 import DefaultLayout from "../layout/defaultLayout/DefaultLayout";
 import { AppArea } from "../../shared";
 import { Homepage, SpiceSelectionPage } from "../../features/spices/pages";
@@ -41,4 +41,4 @@ const router = createBrowserRouter([
     }
 ]);
 
-export default router;
+export default router;*/

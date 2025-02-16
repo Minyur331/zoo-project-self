@@ -66,17 +66,17 @@ module.exports = {
         ],
     },
     plugins: [
-        // new CopyPlugin({
-        //     patterns: [
-        //         {
-        //             from: "./src/features/blog/orePamphlet/assets",
-        //             to: "../assets/orePamphlet"
-        //         },
-        //     ],
-        //     options: {
-        //         concurrency: 100
-        //     }
-        // }),
+        new CopyPlugin({
+             patterns: [
+                 {
+                    from: "./src/features/zoo/assets",
+                    to: "../assets"
+                 },
+            ],
+            options: {
+                concurrency: 100
+             }
+         }),
     ],
     devServer: {
         static: {

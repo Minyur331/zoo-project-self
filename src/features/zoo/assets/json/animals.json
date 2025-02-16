@@ -1,0 +1,72 @@
+[
+    {
+        "name": "Leo",
+        "species": "Lion",
+        "arrivalDate": "2021-05-15",
+        "location": "Savannah Exhibit",
+        "caretaker": "John Doe"
+    },
+    {
+        "name": "Ella",
+        "species": "Elephant",
+        "arrivalDate": "2019-08-22",
+        "location": "Asian Elephant Habitat",
+        "caretaker": "Jane Smith"
+    },
+    {
+        "name": "Zara",
+        "species": "Zebra",
+        "arrivalDate": "2020-03-10",
+        "location": "Grasslands",
+        "caretaker": "Emily Johnson"
+    },
+    {
+        "name": "Kiki",
+        "species": "Giraffe",
+        "arrivalDate": "2022-01-30",
+        "location": "Giraffe Feeding Area",
+        "caretaker": "Emily Johnson"
+    },
+    {
+        "name": "Nala",
+        "species": "Cheetah",
+        "arrivalDate": "2021-11-05",
+        "location": "Big Cat Enclosure",
+        "caretaker": "Sarah Davis"
+    },
+    {
+        "name": "Wally",
+        "species": "Walrus",
+        "arrivalDate": "2020-06-18",
+        "location": "Marine Exhibit",
+        "caretaker": "Chris Wilson"
+    },
+    {
+        "name": "Penny",
+        "species": "Penguin",
+        "arrivalDate": "2023-02-14",
+        "location": "Penguin Cove",
+        "caretaker": "Laura Martinez"
+    },
+    {
+        "name": "Benny",
+        "species": "Bald Eagle",
+        "arrivalDate": "2018-09-25",
+        "location": "Bird Sanctuary",
+        "caretaker": "David Lee"
+    },
+    {
+        "name": "Tina",
+        "species": "Tamarin",
+        "arrivalDate": "2022-07-12",
+        "location": "Tropical Rainforest",
+        "caretaker": "Sarah Davis"
+    },
+    {
+        "name": "Rocky",
+        "species": "Red Panda",
+        "arrivalDate": "2021-04-20",
+        "location": "Panda Exhibit",
+        "caretaker": "Kevin White"
+    }
+]

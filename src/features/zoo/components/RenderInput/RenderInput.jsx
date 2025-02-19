@@ -1,10 +1,11 @@
-const RenderInput = (label, name, value, onChange, type = "text") => {
+const RenderInput = ({label, name, value, onChange, type = "text"}) => {
     return (
         <div className="d-flex flex-column g-1">
-            <label>
+            <label htmlFor={name}>
             {label}
             </label>
             <input
+                id={name}
                 type={type}
                 name={name}
                 value={value}

@@ -1,17 +1,17 @@
 import { createBrowserRouter } from "react-router-dom";
-import DefaultLayout from "../layout/defaultLayout/DefaultLayout";
+
 import { AppArea } from "../../shared";
 import { HomePage, NewAnimal, OurAnimals } from "../../features/zoo/components";
 import loadArticle from "../../features/zoo/components/HomePage/loadArticle";
 import loadAnimals from "../../features/zoo/components/OurAnimals/loadAnimals";
 import loadCaretakers from "../../features/zoo/components/NewAnimal/loadCaretakers";
-
+import DefaultLayout from "../layout/defaultLayout/DefaultLayout";
 
 
 const router = createBrowserRouter([
     {
         path: '/',
-        element: < DefaultLayout />,
+        element: <DefaultLayout/>,
         children: [
             {
                 index: true,
@@ -26,7 +26,7 @@ const router = createBrowserRouter([
                         index:true,
                         element: <OurAnimals/>,
                         loader:loadAnimals
-                    },
+                    }
                 ]
             },
             {

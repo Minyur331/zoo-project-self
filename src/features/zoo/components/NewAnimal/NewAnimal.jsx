@@ -39,6 +39,7 @@ const NewAnimal = () => {
         
         try {
             const response = await postAnimal(formData);
+            console.log(formData);
             
             if (!response.ok) {
                 throw new Error(`Szerverhiba: ${response.status} - ${response.statusText}`);
@@ -59,11 +60,43 @@ const NewAnimal = () => {
         <div className="container-md border border-4 border-dark p-4" style={{ maxWidth: "600px" }}>
             <h2 className="text-xl font-bold mb-4 text-center">Új állat regisztrálása</h2>
             <form className="d-flex flex-column" onSubmit={handleSubmit}>
-                {RenderInput("Új állat neve:", "nev", formData.nev, handleChange)}
-                {RenderInput("Faja az állatnak:", "faj", formData.faj, handleChange)}
-                {RenderInput("Érkezés dátuma:", "erkezes", formData.erkezes, handleChange, "date")}
-                {RenderInput("Helye az állatkertben:", "helye", formData.helye, handleChange)}
-                {RenderSelect("Gondozója:", "gondozo", formData.gondozo, caretakers, handleChange)}
+            <RenderInput 
+                label="Új állat neve:" 
+                name="nev" 
+                value={formData.nev} 
+                onChange={handleChange} 
+            />
+
+            <RenderInput 
+                label="Faja az állatnak:" 
+                name="faj" 
+                value={formData.faj} 
+                onChange={handleChange} 
+            />
+
+            <RenderInput 
+                label="Érkezés dátuma:" 
+                name="erkezes" 
+                value={formData.erkezes} 
+                onChange={handleChange} 
+                type="date" 
+            />
+
+            <RenderInput 
+                label="Helye az állatkertben:" 
+                name="helye" 
+                value={formData.helye} 
+                onChange={handleChange} 
+            />
+
+            <RenderSelect 
+                label="Gondozója:" 
+                name="gondozo" 
+                value={formData.gondozo} 
+                options={caretakers} 
+                onChange={handleChange} 
+            />
+
                 <div className="d-flex justify-content-center">
                     <button type="submit" className="mt-4 btn btn-primary text-white px-4 py-2 rounded">
                         Felvétel

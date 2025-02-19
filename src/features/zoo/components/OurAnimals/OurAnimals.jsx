@@ -11,8 +11,8 @@ const OurAnimals = () => {
     const tableHeaders = [
         { key: 'name', friendlyName: 'Neve' },
         { key: 'species', friendlyName: 'Faja' },
-        { key: 'caretaker', friendlyName: 'Gondozója' }, // Elírás javítva
-        { key: 'location', friendlyName: 'Helye az állatkertben' }, // "loaction" elírás javítva
+        { key: 'caretaker', friendlyName: 'Gondozója' },
+        { key: 'location', friendlyName: 'Helye az állatkertben' },
         { key: 'arrivalDate', friendlyName: 'Érkezése' },
     ];
     return (

@@ -6,7 +6,6 @@ import * as style from './list-component.module.css';
  */
 const ListComponent = ({ listData }) => {
 
-    console.log("ListComponent Data:", listData);
     return (
         <ul className={`${style['list-component']}`}>
             {listData.map((item, index) => (

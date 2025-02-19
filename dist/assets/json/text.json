@@ -1,7 +1,7 @@
 [
     {
         "title": "Szimba Állatkert",
-        "p01":" A Fővárosi Állat- és Növénykert Magyarország legrégebbi és a legnagyobb gyűjteménnyel rendelkező állatkertje. Budapest XIV. kerületében, a Városligetben található az Állatkerti körút 6–12. szám alatt, területe, ami 1986 óta természetvédelmi terület, 18,4 hektár.",
+        "p-01":" A Fővárosi Állat- és Növénykert Magyarország legrégebbi és a legnagyobb gyűjteménnyel rendelkező állatkertje. Budapest XIV. kerületében, a Városligetben található az Állatkerti körút 6–12. szám alatt, területe, ami 1986 óta természetvédelmi terület, 18,4 hektár.",
         "nev": "Fővárosi Állat- és Növénykert",
         "helyszin": "Budapest, Magyarország",
         "alapitasi_ev": 1866
@@ -9,9 +9,9 @@
     },
     {
         "title": "Alapítása",
-        "p": {"p01":"Egy magyarországi állatkert alapításának gondolata már a reformkorban, az 1830-as, 1840-es években felvetődött. Az 1848–49-es forradalom és szabadságharc, majd az utána következő évek viszonyai azonban nem kedveztek a létesítésnek. Hosszabb szünet után, 1859-ben került szóba ismét a létesítendő állatkert ügye. Az alapítási eszme úttörői közül Xántus János zoológus, etnográfus és utazó, Szabó József geológus professzor, Kubinyi Ágoston, a Magyar Nemzeti Múzeum akkori igazgatója és Gerenday József, a Füvészkert igazgatója volt a leginkább tevékeny.",
+        "p": {"p-01":"Egy magyarországi állatkert alapításának gondolata már a reformkorban, az 1830-as, 1840-es években felvetődött. Az 1848–49-es forradalom és szabadságharc, majd az utána következő évek viszonyai azonban nem kedveztek a létesítésnek. Hosszabb szünet után, 1859-ben került szóba ismét a létesítendő állatkert ügye. Az alapítási eszme úttörői közül Xántus János zoológus, etnográfus és utazó, Szabó József geológus professzor, Kubinyi Ágoston, a Magyar Nemzeti Múzeum akkori igazgatója és Gerenday József, a Füvészkert igazgatója volt a leginkább tevékeny.",
 
-        "p02":"Bár a terv lelkes fogadtatásra talált, sőt, 1863-ban a Magyar Tudományos Akadémia is pártolólag foglalkozott az üggyel, a kivitelezésnek kezdetben számos, nagyrészt bürokratikus akadálya volt. Végül 1864-ben, a Magyar Királyi Helytartótanács jóváhagyásával megalakulhatott az „Állatkerti Részvénytársulat”. A szükséges tőkét részvényjegyek kibocsátásával igyekeztek biztosítani. Időközben Pest Szabad Királyi Városánál sikerült elérni, hogy 1865. szeptember 5-én, az akkor még Városerdőnek nevezett Városligetből 31 katasztrális hold és 600 négyszögöl (mintegy 18 hektár) területet a város harmincévi használatra díjmentesen (pontosabban évi egy arany jelképes bérleti díj fejében) átengedjen állatkert létesítése céljából."},
+        "p-02":"Bár a terv lelkes fogadtatásra talált, sőt, 1863-ban a Magyar Tudományos Akadémia is pártolólag foglalkozott az üggyel, a kivitelezésnek kezdetben számos, nagyrészt bürokratikus akadálya volt. Végül 1864-ben, a Magyar Királyi Helytartótanács jóváhagyásával megalakulhatott az „Állatkerti Részvénytársulat”. A szükséges tőkét részvényjegyek kibocsátásával igyekeztek biztosítani. Időközben Pest Szabad Királyi Városánál sikerült elérni, hogy 1865. szeptember 5-én, az akkor még Városerdőnek nevezett Városligetből 31 katasztrális hold és 600 négyszögöl (mintegy 18 hektár) területet a város harmincévi használatra díjmentesen (pontosabban évi egy arany jelképes bérleti díj fejében) átengedjen állatkert létesítése céljából."},
 
         "erdekessegek": [
             {

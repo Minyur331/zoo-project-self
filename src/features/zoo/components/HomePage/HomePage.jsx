@@ -6,7 +6,6 @@ const HomePage = () => {
 
     const article = useLoaderData();
 
-    console.log(article);
     const{title, p01, nev, helyszin,alapitasi_ev}= article[0];
 
     const listElements = article[1].erdekessegek || [];

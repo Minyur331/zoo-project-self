@@ -3,6 +3,8 @@ import DefaultLayout from "../layout/defaultLayout/DefaultLayout";
 import { AppArea } from "../../shared";
 import { HomePage, NewAnimal, OurAnimals } from "../../features/zoo/components";
 import loadArticle from "../../features/zoo/components/HomePage/loadArticle";
+import loadAnimals from "../../features/zoo/components/OurAnimals/loadAnimals";
+import loadCaretakers from "../../features/zoo/components/NewAnimal/loadCaretakers";
 
 
 
@@ -22,8 +24,8 @@ const router = createBrowserRouter([
                 children: [
                     {
                         index:true,
-                        element: <OurAnimals/>
-
+                        element: <OurAnimals/>,
+                        loader:loadAnimals
                     },
                 ]
             },
@@ -33,7 +35,8 @@ const router = createBrowserRouter([
                 children: [
                     {
                         index:true,
-                        element: <NewAnimal/>
+                        element: <NewAnimal/>,
+                        loader: loadCaretakers
 
                     },
                 ]

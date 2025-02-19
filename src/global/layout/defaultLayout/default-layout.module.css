@@ -1,0 +1,7 @@
+.default-layout {
+    display: grid;
+    grid-template-rows:min-content;
+
+    min-height: 100vh;
+    box-sizing: border-box;
+}

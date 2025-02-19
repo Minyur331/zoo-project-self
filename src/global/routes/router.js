@@ -1,9 +1,8 @@
-/*import { createBrowserRouter, Outlet } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import DefaultLayout from "../layout/defaultLayout/DefaultLayout";
 import { AppArea } from "../../shared";
-import { Homepage, SpiceSelectionPage } from "../../features/spices/pages";
-import { SpiceArticle, UnderConstruction } from "../../features/spices/components";
-import loadSpiceArticle from "../../features/spices/loader/loadSpiceArticle";
+import { HomePage, NewAnimal, OurAnimals } from "../../features/zoo/components";
+import loadArticle from "../../features/zoo/components/HomePage/loadArticle";
 
 
 
@@ -14,31 +13,33 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <Homepage />
+                element: <HomePage/>,
+                loader:loadArticle
             },
             {
-                path:'spices',
+                path:'allataink',
                 element: <AppArea />,
                 children: [
                     {
                         index:true,
-                        element: <SpiceSelectionPage />,
-                        loader: loadSpiceCards,
+                        element: <OurAnimals/>
+
                     },
-                    {
-                        path:':spiceSlug',
-                        element: <SpiceArticle />,
-                        loader: loadSpiceArticle,
-                        
-                    }
                 ]
             },
             {
-                path:'spicology',
-                element: <UnderConstruction />
-            },
+                path:'ujallat',
+                element: <AppArea />,
+                children: [
+                    {
+                        index:true,
+                        element: <NewAnimal/>
+
+                    },
+                ]
+            }
         ]
     }
 ]);
 
-export default router;*/
+export default router;

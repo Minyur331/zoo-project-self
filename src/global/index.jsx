@@ -1,15 +1,17 @@
 import React from 'react';
 import { createRoot } from "react-dom/client";
+import { RouterProvider } from 'react-router-dom';
+import router from './routes/router';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
 
 const rootEl = document.getElementById('root');
 const root = createRoot(rootEl);
 
 root.render(
     <React.StrictMode>
-        <h1>Root Rendered...</h1>
+        <RouterProvider router={router} />
     </React.StrictMode>
 );

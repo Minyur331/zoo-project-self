@@ -34,6 +34,10 @@ module.exports = {
                 exclude: /\.module\.css$/,
             },
             {
+                test: /\.scss$/,
+                use: ["style-loader", "css-loader", "sass-loader"]
+            },
+            {
                 test: /\.(gif|jpg|jpeg)$/,
                 type: "asset/resource",
                 generator: {

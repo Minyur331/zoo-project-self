@@ -36,10 +36,31 @@ const NewAnimal = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        
+        const formData = new FormData(event.target);
+        const formValues = Array.from(formData.entries());
+
+        console.log(formValues);
+
+        const formObj = formValues.reduce((acc,item )=> {
+            acc[item[0]] =[item[1]];
+            return acc;
+        }, {});
         try {
+            await postAnimal(formObj);
+            navigate('/allataink'); 
+            console.log('Sikerült a mentés');
+        }
+        catch (err) {
+            setAlerts(draft => {
+                draft.push(<AlertCard  message={`${err}`} type='danger'/> )
+                alert("Hiba történt az állat hozzáadásakor. Ellenőrizd a szerver elérhetőségét vagy a beállításokat!");
+            });
+        }
+
+        
+        /*try {
             const response = await postAnimal(formData);
-            console.log(formData);
+            console.log(formObj);
             
             if (!response.ok) {
                 throw new Error(`Szerverhiba: ${response.status} - ${response.statusText}`);
@@ -53,7 +74,7 @@ const NewAnimal = () => {
             setAlerts(draft => {
                 draft.push(<AlertCard message={`${error}`} type='danger'/>);
             });
-        }
+        }*/
     };
 
     return (

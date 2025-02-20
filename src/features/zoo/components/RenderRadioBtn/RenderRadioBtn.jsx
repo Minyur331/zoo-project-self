@@ -1,5 +1,7 @@
 
-const RenderRadioBtn = ({ labelText, id, name, options }) => {
+const RenderRadioBtn = ({ labelText, inputProps, options }) => {
+
+    const {id, name, required}= inputProps
 
     return (
         <div className="d-flex flex-column g-1">
@@ -12,7 +14,7 @@ const RenderRadioBtn = ({ labelText, id, name, options }) => {
                         name={name}
                         value={option}
                         className="block w-full border p-2 rounded"
-                        required
+                        required={required}
                     />
                     <label htmlFor={`${id}-${index}`}>{option}</label>
                 </div>

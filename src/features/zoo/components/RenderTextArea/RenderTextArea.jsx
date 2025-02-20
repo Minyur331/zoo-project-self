@@ -1,10 +1,11 @@
-const RenderTextarea = ({labelText, id, name,rows, cols, type = "textarea", defaultValue}) => {
+const RenderTextarea = ({labelText, inputProps }) => {
+    const {id, name, rows, cols, defaultValue}= inputProps
     return (
         <div className="d-flex flex-column g-1">
             <label htmlFor={id}>{labelText}</label>
             <textarea
                 id={id}
-                type={type}
+                type="textarea"
                 name={name}
                 rows={rows}
                 cols={cols}

@@ -1,15 +1,17 @@
-const RenderSelect = ({labelText, name,  options}) => {
+const RenderSelect = ({labelText, inputProps,  options}) => {
+
+    const {id, name, required}= inputProps
+
     return (
         <div className="d-flex flex-column g-1">
-            <label htmlFor={name}>
+            <label htmlFor={id}>
                  {labelText}
             </label>
             <select
-                id={name}
+                id={id}
                 name={name}
                 className="block w-full border p-2 mb-2 rounded"
-                defaultValue=""
-                required
+                required={required}
             >
                 <option value="" disabled hidden>Válassz gondozót...</option>
                 {options.map((option, index) => (

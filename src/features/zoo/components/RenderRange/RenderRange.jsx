@@ -1,6 +1,8 @@
 import { useState } from "react";
 
-const RenderRange = ({ labelText, id, name, min, max, type = "range", defaultValue = 5 }) => {
+const RenderRange = ({ labelText, inputProps }) => {
+    const {id, name, min, max, defaultValue = 5, required}= inputProps
+
     const [value, setValue] = useState(defaultValue);
 
     return (
@@ -9,7 +11,7 @@ const RenderRange = ({ labelText, id, name, min, max, type = "range", defaultVal
                 {labelText} <span>{value}</span>
             </label>
             <input
-                type={type}
+                type="range"
                 id={id}
                 name={name}
                 min={min}
@@ -18,7 +20,7 @@ const RenderRange = ({ labelText, id, name, min, max, type = "range", defaultVal
                 value={value}
                 onChange={(e) => setValue(e.target.value)}
                 className="block w-full border p-2 rounded mb-2"
-                required
+                required={required}
             />
         </div>
     );

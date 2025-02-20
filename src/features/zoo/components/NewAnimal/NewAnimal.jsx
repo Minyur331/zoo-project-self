@@ -87,65 +87,98 @@ const NewAnimal = () => {
             <h2 className="text-xl font-bold mb-4 text-center">Új állat regisztrálása</h2>
             <form className="d-flex flex-column gap-2" onSubmit={handleSubmit}>
                 <RenderInput 
-                    labelText="Új állat neve:" 
-                    id="name"
-                    name="nev" 
+                    labelText="Új állat neve:"
+                    inputProps={{
+                        id:"name",
+                        name:"nev",
+                        required: true
+                    }}
                 />
 
                 <RenderInput 
                     labelText="Faja az állatnak:" 
-                    id="species"
-                    name="faj" 
+                    inputProps={{
+                        id:"species",
+                        name:"faj",
+                        required: true
+                    }} 
                 />
 
                 <RenderInputDate
                     labelText="Érkezés dátuma:" 
-                    id="arrival-date"
-                    name="erkezes" 
+                    inputProps={{
+                        id:"arrival-date",
+                        name:"erkezes",
+                        required: true
+                    }}
                 />
 
                 <RenderInput 
-                    labelText="Helye az állatkertben:" 
-                    name="helye" 
+                    labelText="Helye az állatkertben:"
+                    inputProps={{
+                        id:"place",
+                        name:"helye",
+                        required: true
+                    }}
                 />
 
                 <RenderSelect 
                     labelText="Gondozója:" 
-                    name="gondozo" 
-                    options={caretakers} 
+                    inputProps={{
+                        id:"caretaker",
+                        name:"gondozo",
+                        required:true
+                    }}
+                    options={caretakers}
+                    
                 />
                 <RenderCheckbox 
                     labelText="Preferált étel:"
-                    id="preferences" 
-                    name="pref" 
-                    options={preference} 
-
+                    inputProps={{
+                        id:"preferences",
+                        name:"pref",
+                    }}
+                    options={preference}
                 />
+
                 <RenderRange
-                    labelText="Egészség:" 
-                    id="health"
-                    name="egeszseg" 
-                    min="1"
-                    max="10"
+                    labelText="Egészség:"
+                    inputProps={{
+                        id:"health",
+                        name:"egeszseg",
+                        min:"1",
+                        max:"10",
+                        required: true
+                    }}
                 />
                 <RenderRadioBtn
                     labelText="Neme:"
-                    id="gender" 
-                    name="neme" 
-                    options={gender} 
+                    options={gender}
+                    inputProps = {{
+                        id:"gender",
+                        name:"neme",
+                        required: true
+                    }}
                 />
+
                 <RenderColor
                     labelText="Színkód:"
-                    id="color" 
-                    name="color" 
-                    defaultValue="#e66465"
+                    inputProps = {{
+                        id:"color",
+                        name:"szinkod",
+                        defaultValue:"#e66465",
+                        required: true
+                    }}
                 />
+
                 <RenderTextarea
                     labelText="Megjegyzés"
-                    id="comment" 
-                    name="megjegyzes"    
-                    rows="5"
-        
+                    inputProps = {{
+                        id:"comment",
+                        name:"megjegyzes" ,
+                        rows:"5",
+                        cols:""
+                    }}
                 />
 
 

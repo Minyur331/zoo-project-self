@@ -1,6 +1,8 @@
 import { useState } from "react";
 
-const RenderCheckbox = ({ labelText, id, name, options }) => {
+const RenderCheckbox = ({ labelText, inputProps, options }) => {
+
+    const {id, name}= inputProps
     const [selectedValues, setSelectedValues] = useState([]);
 
     const handleCheckboxChange = (event) => {

@@ -1,18 +1,17 @@
-const RenderSelect = ({label, name, value, options, onChange}) => {
+const RenderSelect = ({labelText, name,  options}) => {
     return (
         <div className="d-flex flex-column g-1">
             <label htmlFor={name}>
-                {label}
+                 {labelText}
             </label>
             <select
                 id={name}
                 name={name}
-                value={value}
-                onChange={onChange}
                 className="block w-full border p-2 mb-2 rounded"
+                defaultValue=""
                 required
             >
-                <option value="" hidden>Válassz gondozót...</option>
+                <option value="" disabled hidden>Válassz gondozót...</option>
                 {options.map((option, index) => (
                     <option key={index} value={option.name}>{option.name}</option>
                 ))}

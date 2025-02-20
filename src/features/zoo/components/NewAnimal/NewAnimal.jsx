@@ -5,46 +5,51 @@ import { useImmer } from "use-immer";
 import postAnimal from "./postAnimal";
 import RenderInput from "../RenderInput/RenderInput";
 import RenderSelect from "../RenderSelect/RenderSelect";
+import RenderCheckbox from "../RenderCheckbox/RenderCheckbox";
+import RenderRange from "../RenderRange/RenderRange";
+import RenderRadioBtn from "../RenderRadioBtn/RenderRadioBtn";
+import RenderInputDate from "../RenderInputDate/RenderInputDate";
+import RenderTextarea from "../RenderTextArea/RenderTextArea";
+import RenderColor from "../RenderColor/RenderColor";
 
 const NewAnimal = () => {
     const navigate = useNavigate();
     const caretakers = useLoaderData();
+    const gender =["lány", "fiú"] ;
+    const preference = ["hal", "fű", "gyümölcs"]
 
-    const [formData, setFormData] = useState({
-        nev: "",
-        faj: "",
-        erkezes: "",
-        helye: "",
-        gondozo: ""
-    });
 
     const [alerts, setAlerts] = useImmer([]);
 
-    useEffect(() => {
+    /*useEffect(() => {
         setFormData(prevData => ({
             ...prevData,
             erkezes: new Date().toISOString().split('T')[0],
         }));
-    }, []);
+    }, []);*/
 
-    const handleChange = ({ target: { name, value } }) => {
-        setFormData(prevState => ({
-            ...prevState,
-            [name]: value
-        }));
-    };
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         const formData = new FormData(event.target);
         const formValues = Array.from(formData.entries());
 
+
         console.log(formValues);
 
-        const formObj = formValues.reduce((acc,item )=> {
-            acc[item[0]] =[item[1]];
+        const formObj = formValues.reduce((acc, [key, value]) => {
+            if (acc[key]) {
+                // Ha már létezik, hozzáadjuk az új értéket a tömbhöz
+                acc[key].push(value);
+            } else {
+                // Ha még nem létezik, létrehozzuk a kulcsot és berakjuk az első értéket egy tömbbe
+                acc[key] = [value];
+            }
             return acc;
         }, {});
+
+        console.log(formObj);
+
         try {
             await postAnimal(formObj);
             navigate('/allataink'); 
@@ -80,43 +85,70 @@ const NewAnimal = () => {
     return (
         <div className="container-md border border-4 border-dark p-4" style={{ maxWidth: "600px" }}>
             <h2 className="text-xl font-bold mb-4 text-center">Új állat regisztrálása</h2>
-            <form className="d-flex flex-column" onSubmit={handleSubmit}>
-            <RenderInput 
-                label="Új állat neve:" 
-                name="nev" 
-                value={formData.nev} 
-                onChange={handleChange} 
-            />
+            <form className="d-flex flex-column gap-2" onSubmit={handleSubmit}>
+                <RenderInput 
+                    labelText="Új állat neve:" 
+                    id="name"
+                    name="nev" 
+                />
 
-            <RenderInput 
-                label="Faja az állatnak:" 
-                name="faj" 
-                value={formData.faj} 
-                onChange={handleChange} 
-            />
+                <RenderInput 
+                    labelText="Faja az állatnak:" 
+                    id="species"
+                    name="faj" 
+                />
 
-            <RenderInput 
-                label="Érkezés dátuma:" 
-                name="erkezes" 
-                value={formData.erkezes} 
-                onChange={handleChange} 
-                type="date" 
-            />
+                <RenderInputDate
+                    labelText="Érkezés dátuma:" 
+                    id="arrival-date"
+                    name="erkezes" 
+                />
 
-            <RenderInput 
-                label="Helye az állatkertben:" 
-                name="helye" 
-                value={formData.helye} 
-                onChange={handleChange} 
-            />
+                <RenderInput 
+                    labelText="Helye az állatkertben:" 
+                    name="helye" 
+                />
 
-            <RenderSelect 
-                label="Gondozója:" 
-                name="gondozo" 
-                value={formData.gondozo} 
-                options={caretakers} 
-                onChange={handleChange} 
-            />
+                <RenderSelect 
+                    labelText="Gondozója:" 
+                    name="gondozo" 
+                    options={caretakers} 
+                />
+                <RenderCheckbox 
+                    labelText="Preferált étel:"
+                    id="preferences" 
+                    name="pref" 
+                    options={preference} 
+
+                />
+                <RenderRange
+                    labelText="Egészség:" 
+                    id="health"
+                    name="egeszseg" 
+                    min="1"
+                    max="10"
+                />
+                <RenderRadioBtn
+                    labelText="Neme:"
+                    id="gender" 
+                    name="neme" 
+                    options={gender} 
+                />
+                <RenderColor
+                    labelText="Színkód:"
+                    id="color" 
+                    name="color" 
+                    defaultValue="#e66465"
+                />
+                <RenderTextarea
+                    labelText="Megjegyzés"
+                    id="comment" 
+                    name="megjegyzes"    
+                    rows="5"
+        
+                />
+
+
 
                 <div className="d-flex justify-content-center">
                     <button type="submit" className="mt-4 btn btn-primary text-white px-4 py-2 rounded">
